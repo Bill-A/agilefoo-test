@@ -1,0 +1,83 @@
+<% title "Links that share insight on agile values, principles and practices." %>
+<div id="main" role="main">
+	<div class="container">
+		<div class="content">
+			<div class="row">
+				<div class="span12">
+					<div class="row">
+					<div class="span8">
+					<div class="posts">
+					<% if user_signed_in?  %>
+						<h5><%= button_to 'Add a Post', new_post_path, :method => :get %></h5>
+					<% end =%>
+					<% @posts.each do |post| %>	
+						<div class="row">
+							<hr>
+							<div class="span1">  
+								<div class="post_left">
+									<div class="post_vote_up">
+										<%= link_to '<i class="icon-thumbs-up"> </i> '.html_safe, votes_path(:post_id => post.id, :up => true), :method => :post %>
+									</div>
+									<div class="post_vote">
+										<span class="badge">		
+										<%= post.vote_tally(post) %>	 
+										</span>
+									</div>
+									<div class="post_vote_down">			
+										<%= link_to '<i class="icon-thumbs-down"> </i> '.html_safe, votes_path(:post_id => post.id, :up => false), :method => :post %>
+									</div>
+								</div>
+							</div>
+							<div class="span7">  
+								<div class = "post_right">
+									<div class="post_title">
+										<%= display_url_link(post) %> 
+									</div>
+								<div class="post_user_info">
+									Submitted <%= time_ago_in_words(post.created_at) %>	by <%= post.user.username %>
+								</div>
+								<div class="post_comments">
+									<%= link_to pluralize(post.comments.count, 'commment'), post %>	<i class="icon-share icon-black"></i>
+									<%= mail_to "name", "Share this link", :style => 'font-weight: regular', :subject => "A great link from AgileFoo (agilefoo.herokuapp.com)", :body => "I wanted to share a link to some great information that I found on AgileFoo: '#{post.title}' Click here: #{post.url}" %></p>
+								</div> 															
+							</div>
+						</div> 
+					</div> 
+					<% end %>
+				</div>
+									</div> 
+
+				<!-- <hr> -->
+				<div class="span4">  
+				<div class="well">
+
+	            	<center>
+	            	<p class="small">Manifesto for Agile Software Development</p>
+	            	<small>
+	            	<p> We are uncovering better ways of developing</p>
+					<p>software by doing it and helping others do it.</p>
+					<p>Through this work we have come to value:</p>
+					<b>
+					<p>Individuals and interactions over processes and tools</p>
+					<p>Working software over comprehensive documentation</p>
+					<p>Customer collaboration over contract negotiation</p>
+					<p>Responding to change over following a plan</p>
+					</b>
+
+					<p>That is, while there is value in the items on</p>
+					<p>the right, we value the items on the left more.</p>
+					<a href="http://agilemanifesto.org/"><i class="icon-info-sign icon-black"></i> agilemanifesto.org</a>				
+					</small>
+					</center>
+ 				</div>
+ 				</div>	
+	
+ 				</div>
+										
+			</div>
+			<!-- End posts block -->
+		<footer>
+		</footer>
+		</div> <!--! end of .content -->
+	</div> <!--! end of .container -->
+</div> <!--! end of #main -->

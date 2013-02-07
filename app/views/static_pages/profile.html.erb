@@ -1,0 +1,54 @@
+<% if user_signed_in? %>
+
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<p class="lead">Profile for <%= @user.username %></p> 
+			</div>
+		</div>
+      <div class="row">
+        <div class="span8">
+          <div class="well">
+			<p><b>Email:</b> <%= current_user.email %><br />
+			<b>Twitter handle:</b> <%= current_user.twitter.to_s %><br />			 	
+			<b>Member since:</b> <%= current_user.created_at.to_formatted_s(:long_ordinal) %>
+			<hr>
+			<b>Last 10 Tweets </b>
+				<% @last_tweets.each do |t| %>
+				<p class="tab"><%= t.text%> </p>
+				<% end %>			
+			<hr>
+			<b>Last 10 posts </b>
+				<% @last_posts.each do |p| %>
+				<p class="tab"><%= p.title%> </p>
+				<% end %>
+			<hr>
+			<b>Last 10 comments </b>
+				<% @last_comments.each do |c| %>
+				<p class="tab"><%= c.body%> </p>
+				<% end %>			
+			<hr>
+			<b>Last 10 votes </b><br />
+				<% @last_votes.each do |v| %>
+				<p class="tab"><%= display_vote(v.up) %> <%= v.post.title %>   </p>
+				<% end %>							
+			<hr>
+			<b>Last 10 topic discussions </b>
+				<% @last_topics.each do |t| %>
+				<p class="tab"><%= t.text%> </p>
+				<% end %>				
+			<hr>
+			<b>Last 10 topic replies </b>
+				<% @last_replies.each do |r| %>
+				<p class="tab"><%= r.text%> </p>
+				<% end %>							
+			</p>
+          </div>
+        </div>
+       <div class="span4">
+
+        </div>
+      </div>
+<% end %>
+
+

@@ -1,0 +1,17 @@
+<%= form_for(@topic) do |f| %>
+  <% if @topic.errors.any? %>
+    <div class='alert alert-error'>
+      <%= @topic.errors.full_messages.join("<br/>").html_safe %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <!-- <%= f.label :topic %> -->
+    <%= f.text_area  :text, size: "200x4", placeholder: "Start a discussion topic here"%>
+  </div>  
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

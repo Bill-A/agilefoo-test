@@ -1,0 +1,50 @@
+<% title "Comments" %>
+<div id="main" role="main">
+	<div class="container">
+		<div class="content">
+			<div class="row">
+				<div class="span12">
+					<div class="comment_detail">
+						<div class="row">
+							<div class="span8">  
+								<div class = "post_right">
+									<% if user_signed_in?  %>											
+										<%= render 'posts/form_comment' %>
+										<%= link_to 'Back', posts_path %>
+									<% end =%>									
+									<hr>
+									<div class="post">
+										<%= display_url_link(@post) %> 
+									</div>
+									<div class="post_user_info">
+										Submitted <%= time_ago_in_words(@post.created_at) %>	by <%= @post.user.username %>
+									</div>
+									<div class="comment_count">
+										<%= pluralize(@post.comments.count, 'commment') %>
+									</div> 
+									<div class="commments">
+										<ul>
+				 						<% @post.comments.try(:each) do |c| %>
+											<p class="tab"><%= c.body%> <br />
+															<% if (c.created_at!= nil) %>
+															Submitted <%= time_ago_in_words(c.created_at) %> by <%= c.user.username %>
+									 						<% end %>
+				 						<% end %>
+				 						</ul> 
+									</div>
+
+								<div>	
+								<hr>												
+							</div>
+							<div class="span4">  
+								<!-- blank column	  -->
+ 							</div>
+						</div> 
+					</div> 
+				</div>
+			</div>
+		<footer>
+		</footer>
+		</div> <!--! end of .content -->
+	</div> <!--! end of .container -->
+</div> <!--! end of #main -->   

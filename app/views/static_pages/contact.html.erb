@@ -1,0 +1,38 @@
+	<div class="container">
+		<% title "Contact Info" %>
+		<div class="row">
+			<div class="span12">
+			</div>
+		</div>
+      <div class="row">
+        <div class="span4">
+          <div class="well">
+			<h4>Email:</h4> 
+			<p><strong>Bill Allen</strong></p>
+			<p class="address">	agile Coach <br>
+									agile Instructor<br>
+									Software Developer
+			</p>
+			<div class="comment_share">
+				<i class="icon-share icon-black"></i>
+				<%= mail_to "BillAllenEmail@gmail.com", "Contact me", :style => 'font-weight: regular', :subject => "A message from a fan of AgileFoo" %>
+			</div> 
+          </div>
+        </div>
+        <div class="span4">
+          <div class="well">
+			<h4>Agile User Group:</h4> 
+			<p><strong>Learn agile in an open space</strong></p>
+			<p><%= link_to "'Chicago Agile Open Space' user group", "http://meetup.com/Chicago-Agile-Open-Space" %></p>
+			<br><br><br>
+          </div>
+        </div>
+        <div class="span4">
+          <div class="well">
+ 			<h4>Project source available:</h4> 
+ 			<!-- http://creativecommons.org/choose/ -->
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/us/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/us/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">AgileFoo</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://agilebox.herokuapp.com/contact" property="cc:attributionName" rel="cc:attributionURL">Bill Allen</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/us/deed.en_US">Creative Commons Attribution-NonCommercial 3.0 United States License</a>.<p />Source: <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/Bill-A/agilefoo" rel="dct:source">https://github.com/Bill-A/agilefoo</a>.
+          </div>
+        </div>
+      </div>
+	</div>

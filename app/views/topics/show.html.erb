@@ -1,0 +1,38 @@
+<% title "Replies" %>
+<div id="main" role="main">
+	<div class="container">
+		<div class="content">
+			<div class="row">
+				<div class="span12">
+					<% if user_signed_in?  %>			
+						<%= render 'topics/form_reply' %>
+						<%= link_to 'Back', topics_path %>
+					<% end =%>
+					<hr>
+					<div class="topic">
+						<%= @topic.text %> 
+					</div> 
+					<div class="topic_user_info">
+						Submitted <%= time_ago_in_words(@topic.created_at) %>	by <%= @topic.user.username %>
+					</div>					
+					<div class="reply_count">
+						<%= pluralize(@topic.replies.count, 'reply') %>
+					</div> 
+					<div class="replies">
+						<ul>
+ 						<% @topic.replies.each do |t| %>
+    						<p><%= t.text%><br />
+								<% if (t.created_at!= nil) %>
+								Submitted <%= time_ago_in_words(t.created_at) %> by <%= t.user.username %>
+		 						<% end %>  						
+ 						<% end %> 
+ 						</ul>
+					</div>
+					<hr>				
+				</div>
+			</div>
+		<footer>
+		</footer>
+		</div> <!--! end of .content -->
+	</div> <!--! end of .container -->
+</div> <!--! end of #main -->   

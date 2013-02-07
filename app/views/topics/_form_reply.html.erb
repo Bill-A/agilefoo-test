@@ -1,0 +1,14 @@
+<%= form_for([@topic, @topic.replies.build]) do |f| %>
+  <% if     @reply.errors.any? %>
+    <div class='alert alert-error'>
+      <%= @reply.errors.full_messages.join(" ").html_safe %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_area  :text, size: "200x4", placeholder: "Add a reply"%><br>
+  </div>  
+  <div class="actions">
+    <%= f.submit "Add a reply" %>
+  </div>
+<% end %>

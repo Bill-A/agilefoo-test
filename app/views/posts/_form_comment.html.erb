@@ -1,0 +1,14 @@
+<%= form_for([@post, @post.comments.build]) do |f| %>
+  <% if     @comment.errors.any? %>
+    <div class='alert alert-error'>
+      <%= @comment.errors.full_messages.join(" ").html_safe %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_area  :body, size: "200x4" %><br>
+  </div>  
+  <div class="actions">
+    <%= f.submit "Add a comment" %>
+  </div>
+<% end %>

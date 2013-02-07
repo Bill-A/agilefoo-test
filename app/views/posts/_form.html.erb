@@ -1,0 +1,22 @@
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div class='alert alert-error'>
+      <%= @post.errors.full_messages.join("<br/>").html_safe %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>  
+
+  <div class="field">
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
