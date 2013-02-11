@@ -54,9 +54,10 @@ group :development do
 end
 group :test do
 	gem 'rspec', '2.12.0' 
-	gem 'webrat', '0.7.3'
+	# gem 'webrat', '0.7.3'
 	# gem 'factory-girl-rails'
-	# gem 'capybara'
+	gem 'capybara'
 end
 
 gem 'twitter'
+gem 'newrelic_rpm'

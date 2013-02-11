@@ -1,5 +1,11 @@
 == Getting Started
 
+AgileFoo has several goals: It is a place to save and share links, much like bit.ly (bitmarks) or reddit, but agile related. And it is a place to discuss and learn the 'values', 'principles' and 'practices' of agile software development.
+
+AgileFoo is an open source RoR project and is available to anyone, whether your need is a simple 'link saver' or discussion forum.
+
+Perhaps your goal is to explore and learn agile development and agile testing. If so, then download the code. Explore, Learn and share. There are numerous opportunities to enhance this project with new features. So, write some user stories, write some tests and then write some code. And ideally use the discussion board to share your progress and discoveries.
+
 1. Download/unzip or git clone this project into your local directory
 
 2. Make sure you have bundler gem installed, and within this project's directory, run:
@@ -8,4 +14,7 @@
 3. Then run:       
        <tt>rails server</tt>
 
-3. Go to http://localhost:3000 with a browser.
+4. Go to http://localhost:3000 with a browser.
+
+5. build, measure, learn ... Share 
+
