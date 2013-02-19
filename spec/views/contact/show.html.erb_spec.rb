@@ -1,6 +1,6 @@
 require 'spec_helper' 
 
-describe "contact/show.html.erb" do
+describe "static_pages/contact.html.erb" do
 	it "displays the Contact page" do
 		assign(:contact, double("Contact", :text => "Bill Allen"))
 		render

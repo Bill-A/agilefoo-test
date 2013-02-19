@@ -41,7 +41,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
     add_index :users, :email,                :unique => true
     add_index :users, :username,             :unique => true, :length => { :minimum => 3 }
-    add_index :users, :twitter,              :unique => true
+    add_index :users, :twitter   
     add_index :users, :reset_password_token, :unique => true
     # add_index :users, :confirmation_token,   :unique => true
     # add_index :users, :unlock_token,         :unique => true
