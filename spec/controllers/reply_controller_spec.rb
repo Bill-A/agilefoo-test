@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ReplyController do
+describe RepliesController do
 
   describe "GET 'create'" do
     it "returns http success" do

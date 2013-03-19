@@ -49,14 +49,16 @@ gem 'devise'
 
 
 #Added 12/09/2012 for BDD workflow
-group :development do
-	gem 'rspec-rails', '2.12.0'
+group :development, :test do
+	gem 'rspec-rails', '~> 2.4'
 end
 group :test do
 	gem 'rspec', '2.12.0' 
 	# gem 'webrat', '0.7.3'
 	# gem 'factory-girl-rails'
 	gem 'capybara'
+	gem 'cucumber-rails'
+	gem 'database_cleaner'
 end
 
 gem 'twitter'

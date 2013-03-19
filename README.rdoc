@@ -6,15 +6,135 @@ AgileFoo is an open source RoR project and is available to anyone, whether your 
 
 Perhaps your goal is to explore and learn agile development and agile testing. If so, then download the code. Explore, Learn and share. There are numerous opportunities to enhance this project with new features. So, write some user stories, write some tests and then write some code. And ideally use the discussion board to share your progress and discoveries.
 
-1. Download/unzip or git clone this project into your local directory
 
-2. Make sure you have bundler gem installed, and within this project's directory, run:
-       <tt>bundle install</tt>
+AgileFoo
 
-3. Then run:       
-       <tt>rails server</tt>
+Agile, an umbrella term for a collection of software methodologies with the pattern: iterative development and incremental delivery with customer involvement.
 
-4. Go to http://localhost:3000 with a browser.
+"foo" (pronounced FOO), a universal term often used by programmers as a substitute for something real when discussing ideas or presenting examples. 
 
-5. build, measure, learn ... Share 
+AgileFoo, a site to save and share links, much like bit.ly (bitmarks) or reddit, but agile related. And here you can discuss the 'values', 'principles' and 'practices' of agile software development.
+
+Freely contact me for question, calrifications or just to chat:
+
+Email:  AgileFoo@gmail.com
+		Bill Allen
+		agile Coach
+		agile Instructor
+		Software Developer
+
+Goals
+
+1. Save and share links about agile; allow commenting on links.
+2. Ability to start discussions about agile and allow replies
+3. Facility for studying and understanding TDD, BDD/ATDD, ET
+
+
+User Stories
+
+Feature: new users can register 
+
+In order to gain access to the site
+As a new user to AgileFoo
+I want to register with my details
+
+Notes: secure passwords must consist of string of at least 8 characters 
+	   with at least one letter, one number and one symbol
+
+	Scenario Outline: new user attempts registration
+		Given I am on the New User Registration page of AgileFoo
+		When I submit "<email_address>" and "<username>" and "<password>" and "<password_confirmation>"
+		Then I obtain this response "<message>"
+		Scenarios: attempted registration with invalid username
+		  | email_address       | username  | password              | password_confirmation | landing_page           | message                                          | 
+		  | test5@govirtual.com | my 	    | gr8Zeus+              | gr8Zeus+              | New User Registration  | Username is too short (minimum is 3 characters)  |
+		Scenarios: attempted registration with invalid email address
+		  | email_address       | username  | password              | password_confirmation | landing_page           | message                                          |
+		  | test@govirtual      | gooduser  | gr8Zeus0              | gr8Zeus0              | New User Registration  | Email is invalid                                 |
+		Scenarios: password doesn't match confirmation password
+		  | email_address       | username  | password              | password_confirmation | landing_page           | message                                          |
+		  | test@govirtual.com  | gooduser  | gr8Zeus1              | gr8Zeus2              | New User Registration  | Password doesn't match confirmation              |
+		Scenarios: insecure passwords 
+		  | email_address       | username  | password              | password_confirmation | landing_page           | message                                          |
+		  | test5@govirtual.com | i_tester  | secret0               | secret0               | Main page              | Password is too short (minimum is 8 characters)  |
+		  | test6@govirtual.com | Tester01  | password              | password              | Main page              | Password must consist of at least 8 characters with at least one letter, one number and one symbol |
+		  | test7@govirtual.com | Test_Allen| TesT2001              | TesT2001              | Main page              | Password must consist of at least 8 characters with at least one letter, one number and one symbol |
+		  | test8@govirtual.com | billy     | 007word               | 007word               | Main page              | Password is too short (minimum is 8 characters)  |
+		  | test9@govirtual.com | user      | gr@@Zeus              | gr@@Zeus              | Main page              | Password must consist of at least 8 characters with at least one letter, one number and one symbol |
+		Scenarios: successful registration with secure password
+		  | email_address       | username  | password              | password_confirmation | landing_page           | message                                          |
+		  | test@govirtual.com  | i_tester  | secret08!             | secret08!             | Main page              | Welcome! You have signed up successfully.        |
+		  | test1@govirtual.com | Tester01  | p@ssw0rd              | p@ssw0rd              | Main page              | Welcome! You have signed up successfully.        |
+		  | test2@govirtual.com | Test_Allen| TesT200!              | TesT200!              | Main page              | Welcome! You have signed up successfully.        |
+		  | test3@govirtual.com | billy     | 007word!              | 007word!              | Main page              | Welcome! You have signed up successfully.        |
+		  | test4@govirtual.com | user      | gr8Zeus+              | gr8Zeus+              | Main page              | Welcome! You have signed up successfully.        |
+
+
+_______________________________________________________________
+
+
+Feature: A user can log into AgileFoo 
+
+Scenario: A registered user can log into AgileFoo 
+Given that a registered user is on the ‘Log in’ page
+When the user fills out the Log in form with a valid user name and password and clicks on ‘Log in’ 
+Then they land on the AgileFoo main page with the message ‘Logged in successfully.’
+
+
+"A logged in user visits the Posts page, sees a user submitted link and votes on it.
+Acceptance Criteria
+The user should remain on the Posts page and the vote count should change up or down according to how they voted"
+Feature: A logged in user can post a link 
+
+Scenario: Logged in user can post links 
+Given that a logged in user is on the ‘Links’ page
+When the user clicks ‘Add a Post’  
+Then they land on the posts where they can enter a post consisting of a title and a url
+
+A logged in user goes to the Links pages and can post a link, consisting of a title and a url.
+
+Acceptance Criteria
+User ends up on the links page, showing the hyperlinked title of the new link at the top of the page. 
+
+
+A logged in user can comment on a post.
+Acceptance Criteria
+User sees a list of submitted links.
+After adding a comment the user is returned to the Links page and the comment count for that link should be increased by one. 
+
+"A logged in user visits the Posts page, clicks the comments link under a user submitted link, there they can add a comment to that link. 
+Acceptance Criteria
+Other users can view that comment message by visiting the link's show page."
+_______________________________________________________________
+
+Feature: A logged in user can view their profile 
+
+Scenario: Logged in user can post links 
+Given that a logged in user is on the ‘Links’ page
+When the user clicks ‘Add a Post’  
+Then they land on the posts where they can enter a post consisting of a title and a url
+
+A logged in user can view their profile consisting of posts, comments, discussions, replies and tweets.
+_______________________________________________________________
+
+Feature: A logged in user can vote on a post 
+
+Scenario: Logged in user can post links 
+Given that a logged in user is on the ‘Links’ page
+When the user clicks ‘Add a Post’  
+Then they land on the posts where they can enter a post consisting of a title and a url
+A logged in user can vote a Post up or down.
+Acceptance Criteria
+
+An up vote count should increase the count, A down vote should decrease the count. A user cannot apply multiple up or down votes to a post. 
+
+"A logged in user visits the home page, sees a user submitted link and votes on it.
+Acceptance Criteria
+The user should end up on the home page and the vote count should change up or down according to how they voted"
+
+"A logged in user that votes for a link cannot vote for the same link in the same direction. 
+Acceptance Criteria
+A logged in user can see that which links they have voted for and in which direction up/down"
+
+
 
