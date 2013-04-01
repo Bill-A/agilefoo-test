@@ -28,13 +28,13 @@ Freely contact me for question, clarifications or just to chat:
 
 Email:  agileFoo AT gmail DOT com
 		
-		Bill Allen
-		
-		agile Coach
-		
-		agile Instructor
-		
-		Software Developer
+Bill Allen
+
+agile Coach
+
+agile Instructor
+
+Software Developer
 
 == Goals
 
@@ -47,23 +47,26 @@ Email:  agileFoo AT gmail DOT com
 
 Feature: new users can register 
 
-In order to gain access to the site.
-As a new user to AgileFoo.
-I want to register with my details.
+In order to gain access to the site
 
-Notes: secure passwords must consist of string of at least 8 characters 
-	   with at least one letter, one number and one symbol
+As a new user to AgileFoo
 
-	Scenario: new user registration where password doesn't match confirmation password
-		Given I am on the New User Registration page of AgileFoo
-		When I submit registration details with incorrect password confirmation
-		Then I land on the New User Registration page with the message 'Password doesn't match confirmation'
+I want to register with my details
 
-	Other scenarios: attempted registration with invalid username
-				 	 attempted registration with invalid email address
-					 password doesn't match confirmation password
-					 insecure passwords 
-					 successful registration with secure password
+
+Notes: secure passwords must consist of string of at least 8 characters with at least one letter, one number and one symbol
+
+Scenario: new user registration where password doesn't match confirmation password
+Given I am on the New User Registration page of AgileFoo
+When I submit registration details with incorrect password confirmation
+Then I land on the New User Registration page with the message 'Password doesn't match confirmation'
+
+Other scenarios: 
+attempted registration with invalid username
+attempted registration with invalid email address
+password doesn't match confirmation password
+insecure passwords 
+successful registration with secure password
 
 _______________________________________________________________
 
