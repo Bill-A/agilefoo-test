@@ -27,9 +27,13 @@ agileFoo, a site to save and share links, much like bit.ly (bitmarks) or reddit,
 Freely contact me for question, clarifications or just to chat:
 
 Email:  agileFoo AT gmail DOT com
+		
 		Bill Allen
+		
 		agile Coach
+		
 		agile Instructor
+		
 		Software Developer
 
 == Goals
@@ -43,9 +47,9 @@ Email:  agileFoo AT gmail DOT com
 
 Feature: new users can register 
 
-In order to gain access to the site
-As a new user to AgileFoo
-I want to register with my details
+In order to gain access to the site.
+As a new user to AgileFoo.
+I want to register with my details.
 
 Notes: secure passwords must consist of string of at least 8 characters 
 	   with at least one letter, one number and one symbol
