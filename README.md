@@ -44,9 +44,7 @@ Software Developer
 Feature: new users can register 
 
 In order to gain access to the site
-
 As a new user to AgileFoo
-
 I want to register with my details
 
 
