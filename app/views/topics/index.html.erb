@@ -19,7 +19,7 @@
 												<%= topic.text %>
 											</div>
 											<div class="topic_user_info">
-												Submitted <%= time_ago_in_words(topic.created_at) %>	by <%= topic.user.username %>
+												Submitted <%= time_ago_in_words(topic.created_at) %> ago by <%= topic.user.username %>
 											</div>
 											<div class="reply_count">
 												<%= pluralize(topic.replies.count, 'reply') %>
@@ -30,7 +30,7 @@
 												<ul>
 						 						<% topic.replies.each do |t| %>
 						    						<p><%= t.text%> <br />
-														Submitted <%= time_ago_in_words(t.created_at) %>	by <%= t.user.username %>
+														Submitted <%= time_ago_in_words(t.created_at) %> ago by <%= t.user.username %>
 						 						<% end %> 
 						 						</ul>
 											</div>											

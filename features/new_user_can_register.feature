@@ -9,6 +9,6 @@ Notes: secure passwords must consist of string of at least 8 characters
 	   with at least one letter, one number and one symbol
 
 	Scenario: new user registration where password doesn't match confirmation password
-		Given I am on the New User Registration page of AgileFoo
+		Given I am on the New User Registration page
 		When I submit registration details with incorrect password confirmation
 		Then I land on the New User Registration page with the message 'Password doesn't match confirmation'

@@ -2,37 +2,43 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 gem 'bootstrap-sass'
+gem 'twitter'
+gem 'newrelic_rpm'
+gem 'jquery-rails'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# For user authentication
+gem 'bcrypt-ruby'
+gem 'devise'
 
-group	:development do
-	gem 'sqlite3'
+
+group :development, :test do
+  gem "rspec-rails"  
+  gem 'sqlite3'
+  # gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'launchy'
 end
 
+group :test do
+	gem "rspec", '2.12.0'
+	gem "factory_girl_rails"
+	gem "capybara"
+	gem "cucumber-rails", :require =>false
+	gem "database_cleaner"
+end
 
 group :production do 
 	gem 'pg'
 end
-
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platform => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'jquery-rails'
-
-# For user authentication
-gem 'bcrypt-ruby'
-gem 'devise'
 
 
 # To use Jbuilder templates for JSON
@@ -43,23 +49,3 @@ gem 'devise'
 
 # Deploy with Capistrano
 # gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
-
-
-#Added 12/09/2012 for BDD workflow
-group :development, :test do
-	gem 'rspec-rails', '~> 2.4'
-end
-group :test do
-	gem 'rspec', '2.12.0' 
-	# gem 'webrat', '0.7.3'
-	# gem 'factory-girl-rails'
-	gem 'capybara'
-	gem 'cucumber-rails'
-	gem 'database_cleaner'
-end
-
-gem 'twitter'
-gem 'newrelic_rpm'

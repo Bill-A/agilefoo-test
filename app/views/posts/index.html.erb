@@ -34,7 +34,7 @@
 										<%= display_url_link(post) %> 
 									</div>
 								<div class="post_user_info">
-									Submitted <%= time_ago_in_words(post.created_at) %>	by <%= post.user.username %>
+									Submitted <%= time_ago_in_words(post.created_at) %> ago	by <%= post.user.username %>
 								</div>
 								<div class="post_comments">
 									<%= link_to pluralize(post.comments.count, 'commment'), post %>	<i class="icon-share icon-black"></i>
