@@ -1,8 +1,3 @@
-== Change Log
-
-Fixed issue discovered by Exploratory Testing workshop where registering with a new email and an existing userid would cause error: ConstraintException: column username is not unique: INSERT INTO "users" 
-
-
 == Getting Started
 
 agileFoo has several goals: It is a place to save and share links, much like bit.ly (bitmarks) or reddit, but agile related. And it is a place to discuss and learn the 'values', 'principles' and 'practices' of agile software development.
@@ -12,7 +7,6 @@ agileFoo is an open source RoR project and is available to anyone, whether your 
 Perhaps your goal is to explore and learn agile development and agile testing. If so, then download the code. Explore, Learn and share. There are numerous opportunities to enhance this project with new features. So, write some user stories, write some tests and then write some code. After all, this is a lab to explore and learn testing: TDD, BDD, ATDD and Exploratory Testing. The exploration and learning will center upon tests written in Rspec (see the spec | features directory), Cucumber (see the features directory) and Capybara.
 
 And ideally use the discussion board to share your progress and discoveries.
-
 
 == agileFoo
 
@@ -51,8 +45,11 @@ I want to register with my details
 Notes: secure passwords must consist of string of at least 8 characters with at least one letter, one number and one symbol
 
 Scenario: new user registration where password doesn't match confirmation password
+
 Given I am on the New User Registration page of AgileFoo
+
 When I submit registration details with incorrect password confirmation
+
 Then I land on the New User Registration page with the message 'Password doesn't match confirmation'
 
 Other scenarios:

@@ -136,6 +136,7 @@ feature "Register new account" do
 			fill_in :user_password,              :with => 'secret08!'
 			fill_in :user_password_confirmation, :with => 'secret08!'
 			click_button 'Register User'
+			# current_path.should eq (root_path)
 			# save_and_open_page
 			page.should have_selector ".alert", text: "Welcome! You have signed up successfully."
 		end
