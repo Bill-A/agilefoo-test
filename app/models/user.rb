@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :username, :twitter, :password, :password_confirmation, :remember_me
 
   validates :username, :length => { :minimum => 3 }
-  validates_uniqueness_of :username
-  # validates :username, :uniqueness
+  # I want this error to occur
+  # validates_uniqueness_of :username
   
   validate :password_complexity
  
