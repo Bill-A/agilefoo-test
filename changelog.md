@@ -2,3 +2,4 @@
 
 Cucumber and Rspec testing related to the new user registration feature.
 
+Cucumber and Rspec testing related to the new user registration feature.
