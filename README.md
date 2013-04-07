@@ -1,5 +1,7 @@
 == Getting Started
 
+agilefoo-test is the Exploratory Testing component for agileFoo.
+
 agileFoo has several goals: It is a place to save and share links, much like bit.ly (bitmarks) or reddit, but agile related. And it is a place to discuss and learn the 'values', 'principles' and 'practices' of agile software development.
 
 agileFoo is an open source RoR project and is available to anyone, whether your need is a simple 'link saver' or discussion forum.
