@@ -3,7 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 gem 'bootstrap-sass'
 gem 'twitter'
-gem 'newrelic_rpm'
+gem 'newrelic_rpm', '~> 3.6.0.78'
+# gem "newrelic_rpm", "~> 3.5.5.38"
 gem 'jquery-rails'
 
 # For user authentication

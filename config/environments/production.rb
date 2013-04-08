@@ -66,7 +66,7 @@ CourseProject::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # Default_url_options appropriate for a production environment 
-  config.action_mailer.default_url_options = { :host => 'agilefoo.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'agilefoo-test.herokuapp.com' }
 
     # Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
   ActionMailer::Base.delivery_method = :smtp
