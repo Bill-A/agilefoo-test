@@ -38,7 +38,7 @@
 								</div>
 								<div class="post_comments">
 									<%= link_to pluralize(post.comments.count, 'commment'), post %>	<i class="icon-share icon-black"></i>
-									<%= mail_to "name", "Share this link", :style => 'font-weight: regular', :subject => "A great link from agileFoo (agilefoo.herokuapp.com)", :body => "I wanted to share a link to some great information that I found on agileFoo: \n\n'#{post.title}' \n\nClick here: #{post.url}" %></p>
+									<%= mail_to "fill_in_the_name(s)", "Share this link", :style => 'font-weight: regular', :subject => "A great link from agileFoo (agilefoo.herokuapp.com)", :body => "I wanted to share a link to some great information that I found on agileFoo: \n\n'#{post.title}' \n\nClick here: #{post.url}" %></p>
 								</div> 															
 							</div>
 						</div> 
